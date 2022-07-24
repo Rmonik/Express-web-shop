@@ -1,18 +1,17 @@
 <html>
-    <head>
-        <%- include('includes/head.ejs') %>
-    </head>
-    <body>
-        <header class="mainheader">
-            <nav class="mainheader__nav">
-                <ul class="mainheader__itemlist">
-                    <li class="mainheader__item"><a href="/">Shop</a></li>
-                    <li class="mainheader__item"><a href="/admin">Add Product</a></li>
-                </ul>
-            </nav>
+
+<head>
+    <%- include('includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('includes/nav.ejs') %>
+        <main>
             <h1>Add products</h1>
-            
-        </header>
-    </body>
+            <form method="POST" action="/admin/add-product">
+                <input type="text" name="content"><button type="submit">Add new product</button>
+            </form>
+        </main>
+</body>
 
 </html>
