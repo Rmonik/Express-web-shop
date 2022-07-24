@@ -8,6 +8,11 @@
     <%- include('includes/nav.ejs') %>
         <main>
             <h1>Shop</h1>
+            <% for(let product of products) { %>
+                <article>
+                    <p><%=product%></p>
+                </article>
+            <% } %>
         </main>
 </body>
 
