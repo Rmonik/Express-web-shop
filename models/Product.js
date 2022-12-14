@@ -1,15 +1,14 @@
-let ProductRepository = require('./ProductRepository');
 
 class Product {
 
-    constructor(title) {
+
+    constructor(id, title, description, price) {
+        this.id = id;
         this.title = title;
+        this.description = description;
+        this.price = price;
     }
-
-    save() {
-        ProductRepository.saveProduct(this.title);
-    }
-
+    
 }
 
 module.exports = Product;
