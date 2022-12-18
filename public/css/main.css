@@ -8,6 +8,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header #navicon__checkbox {
     display: none;
 }
@@ -34,7 +39,7 @@ nav {
     height: 100vh;
     width: 100vw;
     background-color:white;
-    transition: opacity 0.6s, background-color 0.6s;
+    transition: opacity 0.6s, background-color 0.6s, visibility 0.6s;
     color:white;
     text-align: center;
     font-size: 1.3rem;
@@ -62,11 +67,13 @@ nav {
     background-color:black;
     opacity: 1;
     height: 100vh;
+    visibility: visible;
 }
 
 #navicon__checkbox:not(:checked) ~ nav {
     background-color:white;
     opacity: 0;
+    visibility: hidden;
 }
 
 nav > ul {
@@ -86,7 +93,6 @@ nav hr {
 }
 
 nav li {
-    padding: 1.5rem;
     width: 80vw;
     border-radius: 0.4rem;
 }
@@ -94,6 +100,15 @@ nav li {
 nav li:hover {
     background-color: white;
     color: black;
+}
+
+nav ul li a {
+    display: block;
+    padding: 1.5rem;
+}
+
+nav ul li a.active {
+    color: gold;
 }
 
 

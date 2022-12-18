@@ -5,6 +5,8 @@ const Router = express.Router();
 const ProductController = require("../controllers/ProductController");
 const Product = require('../models/Product');
 
+
+// /admin/ +
 Router.get('/', (req, res, next) => {
     res.render("admin/admin.ejs", {
         pageTitle: "Admin"

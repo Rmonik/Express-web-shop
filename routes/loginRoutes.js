@@ -4,6 +4,8 @@ const LoginController = require('../controllers/LoginController');
 
 const Router = express.Router();
 
+
+// /login/ +
 Router.get('/', LoginController.getLogin);
 Router.get('/register', LoginController.getRegister);
 

@@ -7,7 +7,6 @@ const shopRoutes = require('./shopRoutes');
 const cartRoutes = require('./cartRoutes');
 const loginRoutes = require('./loginRoutes');
 
-
 Router.use('/admin', adminRoutes);
 Router.use('/shop', shopRoutes);
 Router.use('/cart', cartRoutes);

@@ -15,7 +15,7 @@ class ProductController {
             });
     }
 
-    static async getProducts(req, res, next) {
+    static async getShop(req, res, next) {
         let arr = await ProductRepository.getProducts();
         res.render('shop/shop.ejs', {
             pageTitle: "Shop",
@@ -24,7 +24,7 @@ class ProductController {
     }
 
     static async deleteProduct(req, res, next) {
-        throw "Unsupported";
+        throw new Error("Not yet supported");
     }
 }
 

@@ -4,7 +4,8 @@ const CartController = require('../controllers/CartController');
 
 const Router = express.Router();
 
-Router.get('/', ProductController.getProducts);
+// /shop/ +
+Router.get('/', ProductController.getShop);
 Router.post('/addtocart', CartController.addProductToCart);
 Router.post('/deleteproduct', ProductController.deleteProduct);
 
