@@ -1,6 +1,5 @@
 let BaseRepository = require("../core/BaseRepository");
 let Product = require("./Product");
-let db = require('../core/Database');
 
 
 class ProductRepository extends BaseRepository {

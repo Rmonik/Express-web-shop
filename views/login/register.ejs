@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/nav.ejs') %>
+    <main>
+        <h1>Register</h1>
+        <form action="/login/register" method="post">
+            <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" />
+            </p><p>
+            <label for="password" maxlength="16">Password</label>
+            <input type="password" name="password" />
+            </p>
+            <p>
+                <label for="firstname">firstname</label>
+                <input type="text" name="firstname" />
+            </p>
+            <p>
+                <label for="lastname">lastname</label>
+                <input type="text" name="lastname" />
+            </p>
+            <p>
+            <button type="submit"> Register </button>
+            </p>
+        </form>
+    </main>
+</body>
+
+</html>

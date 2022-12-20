@@ -13,6 +13,10 @@
                     <h2><%=product.title%></h2>
                     <p><%=product.description%></p>
                     <p><%=product.price%></p>
+                    <form action="/shop/addtocart" method="POST">
+                        <input type="hidden" name="product" value="<%=product.id%>" />
+                        <button type="submit">Add to cart</button>
+                    </form>
                 </article>
             <% } %>
         </main>

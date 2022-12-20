@@ -1,3 +1,3 @@
-TO DO's:
+# TO DO's:
 
-- Complete all 
+* Change shop to include "add to cart" button
