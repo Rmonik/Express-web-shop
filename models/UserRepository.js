@@ -1,5 +1,5 @@
 const BaseRepository = require("../core/BaseRepository");
-const Auth = require("./Auth");
+const AuthRepository = require("./AuthRepository");
 const User = require("./User");
 
 
@@ -8,8 +8,8 @@ const User = require("./User");
 class UserRepository extends BaseRepository {
 
     static createUser(email, firstname, lastname, password) {
-        const salt = Auth.generateSalt();
-        const hashedPass = Auth.hashPassword(password, salt);
+        const salt = AuthRepository.generateSalt();
+        const hashedPass = AuthRepository.hashPassword(password, salt);
         return new Promise((resolve, reject) => {
             this.query(`insert into users (email, firstname, lastname, password, salt) values (?, ?, ?, ?, ?)`, [email, firstname, lastname, hashedPass, salt])
                 .then(data => {
@@ -25,7 +25,7 @@ class UserRepository extends BaseRepository {
         return this.getUserByEmail(email)
             .then(user => {
                 // check if password matches
-                let checkpass = Auth.hashPassword(password, user.salt);
+                let checkpass = AuthRepository.hashPassword(password, user.salt);
                 if(checkpass === user.password) {
                     return user;
                 } else {

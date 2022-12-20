@@ -1,6 +1,6 @@
 let {hash, generateRandomHash} = require('../util/hashing');
 
-class Auth {
+class AuthRepository {
 
     static generateSalt() {
         return generateRandomHash();
@@ -16,4 +16,4 @@ class Auth {
     }
 }
 
-module.exports = Auth;
+module.exports = AuthRepository;

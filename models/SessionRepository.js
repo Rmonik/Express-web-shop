@@ -17,7 +17,14 @@ class SessionRepository extends BaseRepository {
     }
 
     static getUserFromSessionId(sessionId) {
-        return;
+        return new Promise((resolve, reject) => {
+            this.query("select user from sessions where session = ?", [sessionId])
+                .then(data => {
+                    resolve(data[0].user);
+                })
+                .catch(
+                    err => reject("Could not find session in DB: ", err));
+        });
     }
 }
 

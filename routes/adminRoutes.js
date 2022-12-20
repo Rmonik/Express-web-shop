@@ -8,6 +8,7 @@ const Product = require('../models/Product');
 
 // /admin/ +
 Router.get('/', (req, res, next) => {
+    console.log("this is the user ID: ", req.userId);
     res.render("admin/admin.ejs", {
         pageTitle: "Admin"
     });

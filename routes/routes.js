@@ -6,10 +6,12 @@ const adminRoutes = require('./adminRoutes');
 const shopRoutes = require('./shopRoutes');
 const cartRoutes = require('./cartRoutes');
 const loginRoutes = require('./loginRoutes');
+const AuthController = require('../controllers/authController');
 
-Router.use('/admin', adminRoutes);
+Router.use('/', AuthController.addAuthenticationInfoToRequest);
+Router.use('/admin', AuthController.protectRouteAuth, adminRoutes);
 Router.use('/shop', shopRoutes);
-Router.use('/cart', cartRoutes);
+Router.use('/cart', AuthController.protectRouteAuth, cartRoutes);
 Router.use('/login', loginRoutes);
 
 // redirect homepage to shop
