@@ -112,7 +112,27 @@ nav ul li a.active {
     color: gold;
 }
 
+@keyframes fadeout {
+    from {opacity :1;}
+    to {opacity :0;}
+}
 
+aside.flashmessage {
+    position: fixed;
+    z-index: 50000;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    left: 50%;
+    top: 0.8rem;
+    translate: -50%;
+    padding: 0.1rem 1rem;
+    animation-name: fadeout;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
 
 
 main {
@@ -123,7 +143,7 @@ main {
     display:flex;
     flex-flow: wrap;
     justify-content: space-around;
-} 
+}
 
 .shop > h1 {
     width:100vw;
@@ -153,4 +173,32 @@ main {
 .shop article button:hover {
     background-color:white;
     color:black;
+}
+
+.cartitem__container {
+    width:80%;
+    border: 1px solid grey;
+    position: relative;
+}
+
+.cartitem {
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 1.5rem;
+} 
+
+.cartitem__title {
+    width: 60%;
+    float:left;
+}
+
+.cartitem__price {
+    width: 40%;
+    float: right;
+}
+
+.carttotalprice {
+    float: right;
+    padding: 0.4rem;
 }

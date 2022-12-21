@@ -19,7 +19,9 @@ class ProductController {
         let arr = await ProductRepository.getProducts();
         res.render('shop/shop.ejs', {
             pageTitle: "Shop",
-            products: arr
+            products: arr,
+            loggedIn: !!req.userId,
+            flashmessage: req.flashMessage,
         });
     }
 

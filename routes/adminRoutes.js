@@ -10,7 +10,10 @@ const Product = require('../models/Product');
 Router.get('/', (req, res, next) => {
     console.log("this is the user ID: ", req.userId);
     res.render("admin/admin.ejs", {
-        pageTitle: "Admin"
+        pageTitle: "Admin",
+        loggedIn: !!req.userId,
+        flashmessage: req.flashMessage,
+
     });
 });
 

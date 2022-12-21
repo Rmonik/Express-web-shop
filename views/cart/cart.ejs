@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include ('../includes/flashmessage.ejs') %>
+    <%- include('../includes/nav.ejs') %>
+        <main>
+            <h1>Cart</h1>
+            <div class="cartitem__container">
+                <% for(let item of cartItems) { %>
+                <div class="cartitem">
+                    <div class="cartitem__title"> <%= item.title %> </div>
+                    <div class="cartitem__price"> <%= item.price %> </div>
+                </div>
+                <% } %>
+                <div class="carttotalprice"> <strong>Total price: </strong>€ <%= totalPrice %></div>
+
+            </div>
+        </main>
+</body>
+
+</html>

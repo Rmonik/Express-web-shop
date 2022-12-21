@@ -7,8 +7,12 @@
             <li><a href="/cart">Cart</a></li>
             <li><a href="/orders">Orders</a></li>
             <hr />
+            <% if(loggedIn) {%>
             <li><a href="/admin">Admin</a></li>
-            <li><a href="/login">Log in</a></li>
+            <li><a href="/login/logout">Log Out</a></li>
+            <% } else { %>
+            <li><a href="/login">Log In</a></li>
+            <% } %>
         </ul>
     </nav>
 </header>

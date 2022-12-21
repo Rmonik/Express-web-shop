@@ -14,14 +14,19 @@ class AuthController {
         SessionRepository.getUserFromSessionId(session)
             .then(data => {
                 req.userId = data;
-                return next();
             }).catch(err => {
                 console.log("Could not find user attached to session. ");
-            });
+            }).finally(() =>
+                next()
+            )
     }
 
     static protectRouteAuth (req, res, next) {
-        if(!req.userId) return res.redirect("/login");
+        console.log("trying to find logged in user...: ", req.userId);
+        if(!req.userId) {
+            console.log("not authenticated...");
+            return res.redirect("/login");
+        }
         return next();
     }
 }
