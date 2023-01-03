@@ -1,4 +1,4 @@
-const BaseRepository = require("../core/BaseRepository");
+const BaseRepository = require("../../core/BaseRepository");
 
 class CartRepository extends BaseRepository {
 

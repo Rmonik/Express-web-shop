@@ -1,6 +1,6 @@
-const User = require('../models/User');
-const UserRepository = require('../models/UserRepository');
-const SessionRepository = require('../models/SessionRepository');
+const User = require('../models/modeldefinitions/User');
+const UserRepository = require('../models/repositories/UserRepository');
+const SessionRepository = require('../models/repositories/SessionRepository');
 const FlashController = require('./FlashController');
 
 class LoginController {
@@ -41,7 +41,15 @@ class LoginController {
     }
 
     static register(req, res, next) {
-        UserRepository.createUser(req.body.email, req.body.firstname, req.body.lastname, req.body.password).then(res.redirect("/login"));
+        UserRepository.createUser(req.body.email, req.body.firstname, req.body.lastname, req.body.password)
+            .then(() => {
+                res.flash("Account created, you can now log in!");
+                res.redirect("/login");
+            })
+            .catch((err) => {
+                res.flash("Could not create account -- Something went wrong");
+                res.redirect("/login/register");
+            })
     }
 
     static logout(req, res, next) {
@@ -49,7 +57,7 @@ class LoginController {
         res.clearCookie("session");
         res.redirect("/shop");
     }
-
+    
 }
 
 

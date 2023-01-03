@@ -1,6 +1,6 @@
-const BaseRepository = require("../core/BaseRepository");
+const BaseRepository = require("../../core/BaseRepository");
 const AuthRepository = require("./AuthRepository");
-const User = require("./User");
+const User = require("../modeldefinitions/User");
 
 
 

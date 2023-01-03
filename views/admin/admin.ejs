@@ -10,9 +10,18 @@
         <main>
             <h1>Add products</h1>
             <form method="POST" action="/admin/add-product">
-                <input type="text" name="title">
-                <input type="text" name="description">
-                <input type="text" name="price">
+                <p>
+                    <label for="title">Title</label>
+                    <input type="text" name="title">
+                </p>
+                <p>
+                    <label for="description">Description</label>
+                    <input type="text" name="description">
+                </p>
+                <p>
+                    <label for="price">Price</label>
+                    <input type="text" name="price">
+                </p>
                 <button type="submit">Add new product</button>
             </form>
         </main>

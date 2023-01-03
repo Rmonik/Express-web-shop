@@ -1,4 +1,4 @@
-const CartRepository = require('../models/CartRepository');
+const CartRepository = require('../models/repositories/CartRepository');
 
 class CartController {
 
@@ -18,7 +18,7 @@ class CartController {
     static getCart(req, res, next) {
         CartRepository.getCartItems(req.userId)
             .then(data => {
-                let totalPrice = data.map(el => parseFloat(el.price)).reduce((acc, curr) => acc + curr, 0);
+                let totalPrice = data.map(el => parseFloat(el.price)).reduce((acc, curr) => acc + curr, 0).toFixed(2);
                 res.render('cart/cart.ejs', {
                     pageTitle: "Cart",
                     cartItems: data,

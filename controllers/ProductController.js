@@ -1,5 +1,5 @@
-let Product = require('../models/Product');
-let ProductRepository = require('../models/ProductRepository');
+let Product = require('../models/modeldefinitions/Product');
+let ProductRepository = require('../models/repositories/ProductRepository');
 
 class ProductController {
 
@@ -25,9 +25,6 @@ class ProductController {
         });
     }
 
-    static async deleteProduct(req, res, next) {
-        throw new Error("Not yet supported");
-    }
 }
 
 module.exports = ProductController;

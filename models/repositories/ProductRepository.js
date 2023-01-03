@@ -1,5 +1,5 @@
-let BaseRepository = require("../core/BaseRepository");
-let Product = require("./Product");
+let BaseRepository = require("../../core/BaseRepository");
+let Product = require("../modeldefinitions/Product");
 
 
 class ProductRepository extends BaseRepository {
@@ -46,6 +46,7 @@ class ProductRepository extends BaseRepository {
                 })
         });
     }
+
 }
 
 module.exports = ProductRepository;

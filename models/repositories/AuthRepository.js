@@ -1,4 +1,4 @@
-let {hash, generateRandomHash} = require('../util/hashing');
+let {hash, generateRandomHash} = require('../../util/hashing');
 
 class AuthRepository {
 

@@ -1,5 +1,5 @@
-const BaseRepository = require("../core/BaseRepository");
-const {generateRandomHash} = require("../util/hashing");
+const BaseRepository = require("../../core/BaseRepository");
+const {generateRandomHash} = require("../../util/hashing");
 
 class SessionRepository extends BaseRepository {
 

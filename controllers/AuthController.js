@@ -1,4 +1,4 @@
-const SessionRepository = require('../models/SessionRepository');
+const SessionRepository = require('../models/repositories/SessionRepository');
 const {extractSessionFromCookies} = require('../util/cookies');
 
 class AuthController {
