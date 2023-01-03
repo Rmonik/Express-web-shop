@@ -5,7 +5,6 @@ class SessionRepository extends BaseRepository {
 
     static createSession(userId) {
         const sessionId = generateRandomHash();
-        console.log(userId, sessionId);
         return new Promise((resolve, reject) => {
             this.query("insert into sessions (session, user) values (?, ?)",
                 [sessionId, userId])

@@ -3,7 +3,8 @@ const validator = require('validator');
 class ValidationController {
 
     static validateAddProduct(req, res, next) {
-     
+        console.log(req.body);
+        console.log(req.file);
         if(validator.isEmpty(req.body.price)) {
             res.flash("Must include a price.");
             return res.redirect("/admin");

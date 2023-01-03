@@ -13,7 +13,7 @@ class FlashController {
             req.flashMessage = decodeURI(m);
             res.clearCookie("flashmessage");
         } catch (error) {
-            console.log("No flash messages");
+            // nothing
         }
         next();
     }

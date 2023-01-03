@@ -9,19 +9,23 @@
     <%- include('../includes/nav.ejs') %>
         <main>
             <h1>Add products</h1>
-            <form method="POST" action="/admin/add-product">
+            <form method="POST" action="/admin/add-product" enctype="multipart/form-data">
                 <p>
                     <label for="title">Title</label>
-                    <input type="text" name="title">
+                    <input type="text" name="title" />
                 </p>
                 <p>
                     <label for="description">Description</label>
-                    <input type="text" name="description">
+                    <input type="text" name="description" />
                 </p>
                 <p>
                     <label for="price">Price</label>
-                    <input type="text" name="price">
+                    <input type="text" name="price" />
                 </p>
+                <p>
+                    <label for="image">Image</label>
+                    <input type="file" name="image" />
+                </p>    
                 <button type="submit">Add new product</button>
             </form>
         </main>

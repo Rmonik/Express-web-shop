@@ -18,8 +18,9 @@ app.set('views', 'views');
 
 // global middleware
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "images")));
 app.use((req, res, next)=>{
-    console.log(req.method, req.path);
+    console.log("#########################", req.method, req.path, "#########################", );
     next();
 });
 

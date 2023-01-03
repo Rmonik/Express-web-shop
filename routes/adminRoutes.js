@@ -5,7 +5,7 @@ const Router = express.Router();
 const ProductController = require("../controllers/ProductController");
 const Product = require('../models/modeldefinitions/Product');
 const ValidationController = require('../controllers/ValidationController.js');
-
+const FileController = require('../controllers/FileController');
 
 // /admin/ +
 Router.get('/', (req, res, next) => {
@@ -17,7 +17,10 @@ Router.get('/', (req, res, next) => {
     });
 });
 
-Router.post('/add-product', ValidationController.validateAddProduct, ProductController.addProduct);
+Router.post('/add-product', 
+    FileController.uploadimage,
+    ValidationController.validateAddProduct, 
+    ProductController.addProduct);
 
 
 module.exports = Router;

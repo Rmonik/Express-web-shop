@@ -1,17 +1,20 @@
 let Product = require('../models/modeldefinitions/Product');
 let ProductRepository = require('../models/repositories/ProductRepository');
+let FileController = require('./FileController');
+
 
 class ProductController {
 
     static async addProduct(req, res, next) {
-        let prod = new Product(null, req.body.title, req.body.description, req.body.price);
-        ProductRepository.createProduct(prod)
+        console.log(req.file);
+        
+        ProductRepository.createProduct(req.body.title, req.body.description, req.body.price, req.file?.filename)
             .then(() => {
                 res.redirect('/');
             }).catch(err => {
-                console.log("Something rrrrrrong");
-                res.setHeader('content-type', 'application/json');
-                res.status(400).json(err);
+                res.flash("Could not add product");
+                console.error(err);
+                return res.redirect("/admin/")
             });
     }
 

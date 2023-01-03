@@ -13,8 +13,7 @@ class UserRepository extends BaseRepository {
         return new Promise((resolve, reject) => {
             this.query(`insert into users (email, firstname, lastname, password, salt) values (?, ?, ?, ?, ?)`, [email, firstname, lastname, hashedPass, salt])
                 .then(data => {
-                    console.log(data);
-                    // resolve(user);
+                    resolve(data);
                 }).catch(err => {
                     console.log("Could not create user: ", err);
                 });
