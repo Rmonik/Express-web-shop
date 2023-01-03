@@ -25,6 +25,7 @@ class ProductController {
             products: arr,
             loggedIn: !!req.userId,
             flashmessage: req.flashMessage,
+            
         });
     }
 

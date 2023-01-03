@@ -12,6 +12,9 @@
             <% for(let product of products) { %>
                 <article class = "productcard">
                     <h2><%=product.title%></h2>
+                    <figure class = "productcard__picture">
+                        <img src="images/<%=product.imageurl || "no-image.jpeg"%>" />
+                    </figure>
                     <p><%=product.description%></p>
                     <p><%=product.price%></p>
                     <form action="/shop/addtocart" method="POST">

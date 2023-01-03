@@ -158,6 +158,23 @@ main {
     position: relative;
 }
 
+.productcard__picture {
+    height: calc(20rem);
+    width: 100%;
+    margin: 0;
+    padding:0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    
+}
+
+
+
 .shop article button {
     position: absolute;
     bottom: 1rem;
