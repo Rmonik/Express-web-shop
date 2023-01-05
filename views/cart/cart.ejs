@@ -17,8 +17,13 @@
                 </div>
                 <% } %>
                 <div class="carttotalprice"> <strong>Total price: </strong>€ <%= totalPrice %></div>
-
+                <div class="cart__submit">
+                    <form action="/cart/order" method="POST">
+                        <button type="Order">Add to cart</button>
+                    </form>
+                </div>
             </div>
+
         </main>
 </body>
 

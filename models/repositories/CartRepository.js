@@ -15,6 +15,10 @@ class CartRepository extends BaseRepository {
         return this.query(`insert into cart_products (user, product) values (?, ?)`, [user, product]);
     }
 
+    static emptyCart(userId) {
+        return this.query(`DELETE FROM cart_products where user = ?`, [userId]);
+    }
+
 
 }
 
